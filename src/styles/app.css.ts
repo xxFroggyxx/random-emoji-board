@@ -1,4 +1,4 @@
-import { globalStyle } from '@vanilla-extract/css';
+import { globalStyle, style } from '@vanilla-extract/css';
 
 globalStyle('*, *::before, *::after', {
   boxSizing: 'border-box',
@@ -9,3 +9,5 @@ globalStyle('body', {
   padding: 0,
   fontFamily: 'Inter, sans-serif',
 });
+
+export const wrapper = style({ padding: 12 });
