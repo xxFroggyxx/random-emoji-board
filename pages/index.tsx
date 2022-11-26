@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { Board } from '@/components/Board';
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
         <title>Emoji app!</title>
         <meta name="description" content="Emoji app!" />
       </Head>
+      <Board />
     </div>
   );
 }
