@@ -10,4 +10,4 @@ globalStyle('body', {
   fontFamily: 'Inter, sans-serif',
 });
 
-export const wrapper = style({ padding: 12 });
+export const wrapperStyle = style({ padding: 12 });
