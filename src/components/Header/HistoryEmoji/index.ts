@@ -1,0 +1,1 @@
+export { HistoryEmoji } from './HistoryEmoji';

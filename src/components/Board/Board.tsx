@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from 'uuid';
 import type { CSSProperties, Dispatch, MouseEventHandler, SetStateAction } from 'react';
 
 import { getRandomEmoji } from '@/helpers/getRandomEmoji';
-import type { Point } from '@/hooks/usePointWithHistory';
+import type { Point } from '@/types/point';
 
 import { boardStyle, pointStyle } from './Board.css';
 
