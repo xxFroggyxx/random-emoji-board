@@ -3,6 +3,7 @@ import type { CSSProperties, Dispatch, MouseEventHandler, SetStateAction } from 
 
 import { getRandomEmoji } from '@/helpers/getRandomEmoji';
 import type { Point } from '@/types/point';
+import { supabase } from '@/lib/supabase';
 
 import { boardStyle, pointStyle } from './Board.css';
 
@@ -12,7 +13,7 @@ interface BoardProps {
 }
 
 export const Board = ({ points, setPoints }: BoardProps) => {
-  const handleBoardClick: MouseEventHandler<HTMLDivElement> = (event) => {
+  const handleBoardClick: MouseEventHandler<HTMLDivElement> = async (event) => {
     const emoji = getRandomEmoji();
 
     setPoints([
@@ -24,6 +25,29 @@ export const Board = ({ points, setPoints }: BoardProps) => {
         content: emoji,
       },
     ]);
+
+    const { data, error } = await supabase.from('emoji-store').select('*').eq('emoji', emoji);
+    if (error) {
+      console.error(error);
+      return;
+    }
+
+    if (data.length !== 0) {
+      const { error: updateError } = await supabase
+        .from('emoji-store')
+        .update({ count: data[0]['count'] + 1 })
+        .eq('emoji', emoji);
+      if (updateError) {
+        console.error(updateError);
+        return;
+      }
+    } else {
+      const { error: insertError } = await supabase.from('emoji-store').insert({ emoji: emoji, count: 1 });
+      if (insertError) {
+        console.error(insertError);
+        return;
+      }
+    }
   };
 
   return (
