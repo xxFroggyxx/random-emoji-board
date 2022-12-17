@@ -1,12 +1,12 @@
 import { v4 as uuidv4 } from 'uuid';
 import type { CSSProperties, Dispatch, MouseEventHandler, SetStateAction } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import { getRandomEmoji } from '@/helpers/getRandomEmoji';
 import type { Point } from '@/types/point';
 import { supabase } from '@/lib/supabase';
 
 import { boardStyle, pointStyle } from './Board.css';
-
 interface BoardProps {
   points: Point[];
   setPoints: Dispatch<SetStateAction<Point[]>>;
@@ -52,16 +52,22 @@ export const Board = ({ points, setPoints }: BoardProps) => {
 
   return (
     <div className={boardStyle} onClick={handleBoardClick}>
-      {points.map(({ id, x, y, content }) => (
-        <span
-          key={id}
-          className={pointStyle}
-          role="img"
-          aria-label="emoji"
-          style={{ '--left': `${x}px`, '--top': `${y}px` } as CSSProperties}
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
-      ))}
+      <AnimatePresence>
+        {points.map(({ id, x, y, content }) => (
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.23 }}
+            key={id}
+            className={pointStyle}
+            role="img"
+            aria-label="emoji"
+            style={{ '--left': `${x}px`, '--top': `${y}px` } as CSSProperties}
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
+        ))}
+      </AnimatePresence>
     </div>
   );
 };
