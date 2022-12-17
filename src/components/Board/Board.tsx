@@ -19,8 +19,8 @@ export const Board = ({ points, setPoints }: BoardProps) => {
       ...points,
       {
         id: uuidv4(),
-        x: event.clientX - event.currentTarget.offsetLeft,
-        y: event.clientY - event.currentTarget.offsetTop,
+        x: event.pageX - event.currentTarget.offsetLeft,
+        y: event.pageY - event.currentTarget.offsetTop,
         content: emoji,
       },
     ]);
