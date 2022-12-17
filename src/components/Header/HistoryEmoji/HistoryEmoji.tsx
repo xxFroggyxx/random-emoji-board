@@ -1,5 +1,3 @@
-import React from 'react';
-
 import type { Point } from '@/types/point';
 
 import { historyEmojiStyle, historyPoint } from './HistoryEmoji.css';
