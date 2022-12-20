@@ -1,34 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">Random emoji app - xxFroggyxx</h1>
 
-## Getting Started
+<div align="center">
+  <h3>
+    <a href="http://random-emoji-board.vercel.app/">
+      Demo
+    </a>
+    <span> | </span>
+    <a href="https://github.com/xxFroggyxx/random-emoji-board">
+      Solution
+    </a>
+  </h3>
+</div>
 
-First, run the development server:
+<!-- TABLE OF CONTENTS -->
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Table of Contents
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Overview](#overview)
+  - [Built With](#built-with)
+- [Features](#features)
+- [Contact](#contact)
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+<!-- OVERVIEW -->
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Overview
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+![screenshot](https://raw.githubusercontent.com/xxFroggyxx/random-emoji-board/main/public/screenshot.png)
 
-## Learn More
+This is my first Typescript app where I tried to get the most out of it. <p>This app has board and when you click on it, random emoji appears in place where you clicked. Additionally, this project uses backend, cause database holds "All time occurances".</p>
 
-To learn more about Next.js, take a look at the following resources:
+## Built With
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [React](https://reactjs.org/)
+- [NextJS](https://nextjs.org/)
+- [Supabase](https://supabase.com/)
+- [Vanilla-extract](https://vanilla-extract.style/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Features
 
-## Deploy on Vercel
+### User can:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- appears random emoji on place when clicked,
+- undo and redo emojis,
+- see history,
+- see "All time occurances"
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Contact
+
+- GitHub [@xxFroggyxx](https://github.com/xxFroggyxx/)
