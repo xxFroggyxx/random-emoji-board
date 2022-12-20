@@ -26,6 +26,7 @@
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "@typescript-eslint/parser": "^5.44.0",
     "@vanilla-extract/next-plugin": "^2.1.1",
+    "cypress": "^12.1.0",
     "eslint": "^8.28.0",
     "eslint-config-next": "^13.0.5",
     "eslint-plugin-import": "^2.26.0"
