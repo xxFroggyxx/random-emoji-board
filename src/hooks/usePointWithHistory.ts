@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 
-import type { Point } from '@/types/point';
+import type { Point } from '@/types/point.types';
 
 export const usePointWithHistory = () => {
   const [points, setPoints] = useState<Point[]>([]);

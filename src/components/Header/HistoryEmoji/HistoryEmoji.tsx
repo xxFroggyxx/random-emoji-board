@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 
-import type { Point } from '@/types/point';
+import type { Point } from '@/types/point.types';
 
 import { historyEmojiStyle, historyPoint } from './HistoryEmoji.css';
 

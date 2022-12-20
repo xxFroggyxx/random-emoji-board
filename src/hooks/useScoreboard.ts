@@ -1,21 +1,21 @@
 import { useEffect, useState } from 'react';
 
-import type { supabaseTypes } from '@/types/db.types';
+import type { ScoreboardType } from '@/types/scoreboard.types';
 import { sortArray } from '@/helpers/sortArray';
 import { supabase } from '@/lib/supabase';
 
 interface useScoreboardProps {
-  sortedData: supabaseTypes[];
+  sortedData: ScoreboardType[];
 }
 
 export const useScoreboard = ({ sortedData }: useScoreboardProps) => {
-  const [scoreboard, setScoreboard] = useState<supabaseTypes[]>(sortedData);
+  const [scoreboard, setScoreboard] = useState<ScoreboardType[]>(sortedData);
 
   useEffect(() => {
     const channel = supabase
       .channel('schema-db-changes')
       .on('postgres_changes', { event: 'INSERT', schema: 'public' }, (payload) => {
-        const newEmoji = payload.new as supabaseTypes;
+        const newEmoji = payload.new as ScoreboardType;
         setScoreboard((storedEmoji) => sortArray([...storedEmoji, newEmoji]));
       })
       .on('postgres_changes', { event: 'UPDATE', schema: 'public' }, (payload) => {

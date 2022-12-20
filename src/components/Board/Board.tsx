@@ -3,7 +3,7 @@ import type { CSSProperties, Dispatch, MouseEventHandler, SetStateAction } from 
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { getRandomEmoji } from '@/helpers/getRandomEmoji';
-import type { Point } from '@/types/point';
+import type { Point } from '@/types/point.types';
 import { supabase } from '@/lib/supabase';
 
 import { boardStyle, pointStyle } from './Board.css';

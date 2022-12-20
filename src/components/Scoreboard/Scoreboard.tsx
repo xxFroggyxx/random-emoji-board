@@ -1,4 +1,4 @@
-import type { supabaseTypes } from '@/types/db.types';
+import type { ScoreboardType } from '@/types/scoreboard.types';
 
 import {
   scoreboardCounter,
@@ -9,7 +9,7 @@ import {
 } from './Scoreboard.css';
 
 interface ScoreboardProps {
-  scoreboard: supabaseTypes[];
+  scoreboard: ScoreboardType[];
 }
 
 export const Scoreboard = ({ scoreboard }: ScoreboardProps) => {

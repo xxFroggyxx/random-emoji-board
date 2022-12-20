@@ -1,6 +1,6 @@
 import type { Dispatch, SetStateAction } from 'react';
 
-import type { Point } from '@/types/point';
+import type { Point } from '@/types/point.types';
 
 import { Buttons } from './Buttons';
 import { headerStyle } from './Header.css';

@@ -35,9 +35,3 @@ export interface Database {
     };
   };
 }
-
-export interface supabaseTypes {
-  id: number;
-  emoji: string;
-  count: number;
-}

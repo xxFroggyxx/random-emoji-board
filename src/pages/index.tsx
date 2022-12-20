@@ -5,13 +5,13 @@ import { Header } from '@/components/Header';
 import { wrapperStyle } from '@/styles/app.css';
 import { usePointWithHistory } from '@/hooks/usePointWithHistory';
 import { Scoreboard } from '@/components/Scoreboard';
-import type { supabaseTypes } from '@/types/db.types';
+import type { ScoreboardType } from '@/types/db.types';
 import { supabase } from '@/lib/supabase';
 import { sortArray } from '@/helpers/sortArray';
 import { useScoreboard } from '@/hooks/useScoreboard';
 
 interface HomeProps {
-  sortedData: supabaseTypes[];
+  sortedData: ScoreboardType[];
 }
 
 export default function Home({ sortedData }: HomeProps) {
